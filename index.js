@@ -69,7 +69,8 @@ async function makeIssue() {
             body: `## 오늘의 로또 번호
 
 - **${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1}**
-**Date: ${formattedDate}**
+
+Date: ${formattedDate}
             `,
         })
     });
