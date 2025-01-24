@@ -8,8 +8,8 @@ async function makeIssue() {
             Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-            title: "행운의 숫자",   // 수정
-            body: `${Math.floor(Math.random() * 100) + 1}`,     // 수정
+            title: "오늘의 로또 번호",   // 수정
+            body: `${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1}`,     // 수정
         })
     });
     if (response.ok) {
