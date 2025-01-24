@@ -65,11 +65,11 @@ async function makeIssue() {
             Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-            title: "오늘의 로또 번호 (${formattedDate})",
+            title: `오늘의 로또 번호 (${formattedDate})`,
             body: `## 오늘의 로또 번호
 
 - **${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1}**
-- **${formattedDate}**
+**Date: ${formattedDate}**
             `,
         })
     });
