@@ -55,16 +55,21 @@ async function makeIssue() {
         return;
     }
 
+    // 현재 날짜를 'YYYY-MM-DD' 형식으로 가져오기
+    const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0]; // 'YYYY-MM-DD' 형식
+
     const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/issues`, {
         method: 'POST',
         headers: {
             Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-            title: "오늘의 로또 번호",
+            title: "오늘의 로또 번호 (${formattedDate})",
             body: `## 오늘의 로또 번호
 
 - **${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1} ${Math.floor(Math.random() * 45) + 1}**
+- **${formattedDate}**
             `,
         })
     });
