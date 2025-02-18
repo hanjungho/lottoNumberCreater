@@ -23,5 +23,5 @@ jobs:
 
       - name: index.js 실행
         env:
-          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          GH_TOKEN: ${ secrets.PERSONAL_ACCESS_TOKEN }
         run: node index.js
